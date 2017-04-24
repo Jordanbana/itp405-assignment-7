@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 
-function getBook(id){
+function findRecord(id){
 
   return new Promise(function(resolve, reject){
 
@@ -30,4 +30,4 @@ function getBook(id){
   });
 }
 
-module.exports = getBook;
+module.exports = findRecord;

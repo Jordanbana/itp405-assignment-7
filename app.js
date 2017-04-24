@@ -1,11 +1,11 @@
 var express = require('express')
 var app = express()
-var getBook = require('./source/getBook')
+var book = require('./source/book')
 var findAll = require('./source/review')
 
 
 app.get('/api/v1/books/:id', function (request, response) {
-  getBook(request.params.id).then(function(books){
+  book(request.params.id).then(function(books){
     response.json({
       "book": {
           "id": books.id,
