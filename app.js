@@ -1,6 +1,5 @@
 var express = require('express')
 var app = express()
-var mysql = require('mysql');
 var getBook = require('./source/getBook')
 
 
@@ -22,7 +21,7 @@ app.get('/api/v1/books/:id', function (request, response) {
       }
     });
   }, function(){
-    response.json({
+    response.status(404).json({
         "error": {
           "message": "Book not found"
         }
