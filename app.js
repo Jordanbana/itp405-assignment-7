@@ -33,7 +33,10 @@ app.get('/api/v1/books/:id', function (request, response) {
 
 app.get('/api/v1/reviews', function(request,response){
   findAll().then(function(reviews){
-    response.json(reviews);},
+    response.json({
+        reviews
+    });
+  },
     function(){
       response.status(404).json({
           "error": {
